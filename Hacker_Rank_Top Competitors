@@ -1,7 +1,5 @@
-Problem Title and link : https://www.hackerrank.com/challenges/full-score/problem?isFullScreen=true
-
-
 Solution:
+
 select h.hacker_id, h.name 
 from Submissions s
 join Hackers h on s.hacker_id= h.hacker_id
