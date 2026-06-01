@@ -1,0 +1,20 @@
+Problem:3793. Find Users with High Token Usage
+Difficulty: Easy, AI Prompt based mysql question
+
+Solution:
+
+MySql
+
+SELECT 
+    user_id,
+    COUNT(*) As prompt_count,
+    ROUND(AVG(tokens), 2) AS avg_tokens
+FROM 
+    prompts
+GROUP BY 
+    user_id
+HAVING 
+    COUNT(*) >= 3
+    AND MAX(tokens) > AVG(tokens)
+ORDER BY 
+    AVG(tokens) DESC,
